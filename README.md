@@ -2,17 +2,19 @@ OctoSquashes
 =============
 
 An experimental visualization of github timeline.
-You can visit the live website [Github](http://octos.quash.es)
+
+You can visit the [live website](http://octos.quash.es)
+
 This project is an extration of the code running on the actual website.
 
 Requirements
 -------
 
-  * the following ruby gems
+  * the following ruby gems:
 
-    superfeedr-rb
-    restclient
-    json
+      superfeedr-rb
+      restclient
+      json
 
   * an installation of couchdb v 0.10.0 (or greater) running on localhost
 
@@ -22,35 +24,35 @@ Requirements
 Install
 -------
 
-  * checkout the code from Github
+  * checkout the code from Github:
 
-    git checkout git://github.com/hungryblank/octo_squash_es.git
+      git checkout git://github.com/hungryblank/octo_squash_es.git
 
   * configure nginx so the config file `config/nginx.conf` is loaded
   * add an entry in your /etc/hosts so local.quash.es points to 127.0.0.1
-  * run the deploy rake task from the root dir of the project
+  * run the deploy rake task from the root dir of the project:
 
-    rake deploy
+      rake deploy
 
   * open an account at http://superfeedr.com and subscribe to the feed
-  * in superfeedr dashboard subscribe to the github timeline
+  * in superfeedr dashboard subscribe to the github timeline:
 
-    http://github.com/timeline.atom
+      http://github.com/timeline.atom
 
-  * start the script to feed the database
+  * start the script to feed the database:
 
-    export SUPERFEEDR_USER=your_username@superfeedr.com
-    export SUPERFEEDR_PWD=superfeedr_pwd
+      export SUPERFEEDR_USER=your_username@superfeedr.com
+      export SUPERFEEDR_PWD=superfeedr_pwd
 
-    ruby squasher.rb
+      ruby squasher.rb
 
-  * after a while you should see entries appearing in couchdb
+  * after a while you should see entries appearing in couchdb:
 
-    http://127.0.0.1/squasher
+      http://127.0.0.1/squasher
 
-  * and you should be able to see the actual application visiting
+  * and you should be able to see the actual application visiting:
 
-   http://local.quash.es
+      http://local.quash.es
 
 Copyright
 ---------
