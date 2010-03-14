@@ -1,0 +1,249 @@
+body {
+  font-family:Verdana,Geneva,Arial,Helvetica,sans-serif;
+  margin: 0px;
+  background-color: #222222;
+}
+#treemap {
+  color: black;
+}
+#treemap div {
+font-size:11px;
+overflow:hidden;
+position:absolute;
+color: rgb(255,255,255);
+}
+#treemap .content {
+background-color:#333333;
+border:0 solid #060606;
+}
+#treemap .head {
+  border: 1px solid #505050;
+  border-bottom-width: 0px;
+  background-color:#444444;
+  color: rgba(255,255,255, 0.75);
+  -moz-border-radius: 0.5em 0.5em 0px 0px;
+  -webkit-border-top-left-radius: 0.5em;
+  -webkit-border-top-right-radius: 0.5em;
+  cursor: pointer;
+  background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.15, rgb(98,98,98)),
+      color-stop(0.85, rgb(33,33,33))
+  );
+  background-image: -moz-linear-gradient(
+      center bottom,
+      rgb(98,98,98) 15%,
+      rgb(33,33,33) 85%
+  );
+}
+#treemap .head.in-path {
+}
+#treemap .body {
+background-color:333333;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+}
+#treemap .leaf {
+border:1px solid #000000;
+color: rgba(255,255,255, 0.35);
+display:table-cell;
+vertical-align:middle;
+-moz-border-radius: 0px 0px 0.5em 0.5em;
+-webkit-border-radius: 0px 0px 0.5em 0.5em;
+}
+#treemap .over-content {
+  -moz-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
+  background-color: #999999;
+  <%= CssGradient.new('background-image',
+                      [[100,96,80], 2],
+                       [[199,192,165], 9],
+                       [[255,255,255], 55],
+                       [[100,96,80], 85]); %>
+}
+#treemap .over-head {
+}
+.Push {
+  background-color: #000037;
+  <%= CssGradient.new('background-image',
+                      [[0,0,42], 2],
+                       [[0,85,195], 9],
+                       [[1,28,98], 55],
+                       [[0,0,42], 85]); %>
+}
+.Watch {
+  background-color: #003700;
+  <%= CssGradient.new('background-image',
+                       [[0,32,0], 2],
+                       [[0,164,89], 9],
+                       [[1,98,28], 55],
+                       [[0,32,0], 85]) %>
+  );
+}
+.Member {
+  background-color: #002000;
+  <%= CssGradient.new('background-image',
+                       [[11,32,0], 2],
+                       [[70,200,0], 9],
+                       [[37,105,0], 55],
+                       [[11,32,0], 85]) %>
+  );
+}
+.Fork, .ForkApply {
+  background-color: #023756;
+  <%= CssGradient.new('background-image',
+                      [[1,28,43], 2],
+                      [[109,148,171], 9],
+                      [[13,40,56], 55],
+                      [[1,28,43], 85]) %>
+  );
+}
+.Create {
+  background-color: #202000;
+  <%= CssGradient.new('background-image',
+                      [[32,32,0], 2],
+                      [[164,164,89], 9],
+                      [[78,78,18], 55],
+                      [[32,32,0], 85]) %>
+  );
+}
+.CommitComment {
+  background-color: #002020;
+  <%= CssGradient.new('background-image',
+                      [[30,13,0], 2],
+                      [[189,86,0], 9],
+                      [[105,46,0], 55],
+                      [[30,13,0], 85]) %>
+  );
+}
+.Issues {
+  background-color: #34101E;
+  <%= CssGradient.new('background-image',
+                      [[52,16,30], 2],
+                      [[194,75,123], 9],
+                      [[78,18,68], 55],
+                      [[52,16,30], 85]) %>
+  );
+}
+.Wiki {
+  background-color: #A9A38B;
+  <%= CssGradient.new('background-image',
+                      [[100,96,80], 2],
+                      [[199,192,165], 9],
+                      [[169,163,139], 55],
+                      [[100,96,80], 85]) %>
+  );
+}
+.Follow {
+  background-color: #003326;
+  <%= CssGradient.new('background-image',
+                      [[0,51,38], 2],
+                      [[97,153,133], 9],
+                      [[27,94,77], 55],
+                      [[0,51,38], 85]) %>
+  );
+}
+.Public {
+  background-color: #6F3D48;
+}
+.Delete {
+  background-color: #000000;
+  <%= CssGradient.new('background-image',
+                      [[0,0,0], 2],
+                      [[100,100,100], 9],
+                      [[20,20,20], 55],
+                      [[0,0,0], 85]) %>
+  );
+}
+.Upload, .Download {
+  background-color: #000000;
+  <%= CssGradient.new('background-image',
+                      [[11,0,26], 2],
+                      [[82,0,189], 9],
+                      [[43,0,99], 55],
+                      [[11,0,26], 85]) %>
+  );
+}
+.tooltip {
+  display: none;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+  -moz-border-radius: 1em;
+  -webkit-border-radius: 1em;
+  background-color: rgba(40, 40, 40, 0.8);
+  border: solid 2px #A0A0A0;
+  padding: 1.5em;
+  font-size: 11px;
+  width: 25em;
+  color: #EEEEEE;
+}
+.tooltip h2 {
+  text-shadow: #0c0c0c 3px 3px 5px;
+  font-size: 120%;
+  margin-bottom: 0px;
+}
+.tooltip ul {
+  margin-bottom: 0px;
+}
+.tooltip li {
+  list-style-type: none;
+  margin: 0.25em;
+}
+.tooltip a {
+  color: #EEEEEE;
+  text-decoration: none;
+}
+.tooltip p {
+  margin: 0.25em;
+  background-color: rgba(90, 90, 90, 0.7);
+  padding: 0.5em;
+  text-shadow: #0c0c0c 3px 3px 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+.tooltip p a{
+  color: #8888FF;
+}
+#footer {
+  text-align: right;
+  width: 100%;
+  height:3em;
+  color: #AAAAAA;
+  background-color: #111111;
+  border-top: 0.2em solid #555555;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+}
+#refresh {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  display: none;
+  -moz-box-shadow: 0 1px 3px #999;
+  -webkit-box-shadow: 0 1px 3px #999;
+  -moz-border-radius: 0px 25px 0px 0px;
+  -webkit-border-top-right-radius: 25px;
+  background-color: rgba(40, 40, 40, 0.8);
+  border: solid 2px #A0A0A0;
+  padding: 11px 11px 5px 5px;
+  font-size: 11px;
+  color: #FFFFFF;
+}
+#treemap #loading {
+  font-size: 200%;
+  color: #AAAAAA;
+}
+#footer h1 {
+  padding-right: 1em;
+  margin-bottom: 0px;
+}
+#footer h1 a {
+  text-decoration: none;
+  color: #8888FF;
+}
+#about, #credits {
+  font-size: 100%;
+}
