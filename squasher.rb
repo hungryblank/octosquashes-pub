@@ -117,10 +117,9 @@ class GithubProject
 
   def infos
     github_api_repo_uri = "http://github.com/api/v2/json/repos/show/#{@title}"
-    @infos ||= begin JSON.parse(RestClient.get(github_api_repo_uri))
+    @infos ||= JSON.parse(RestClient.get(github_api_repo_uri))
     rescue => e
       Logger.log("in #{self.inspect}\nRESCUED #{e} '#{e.message}'\n#{e.backtrace.join("\n")}")
-      end
       {'repository' => {'description' => ''}}
   end
 
