@@ -101,14 +101,18 @@ class GithubProject
     @title = "#{author}/#{name}"
     @id = MD5.hexdigest(@title)
     @author = author
-    @last_version = fetch
+    @last_version = fetch.merge({'description' => gh_description})
     @entries = @last_version['entries'] || []
   end
 
   def fetch
     CouchClient.get(uri)
     rescue RestClient::ResourceNotFound
-    {'title' => @title, 'author' => @author, 'resource_type' => 'project', 'description' => infos['repository']['description']}
+    {'title' => @title, 'author' => @author, 'resource_type' => 'project'}
+  end
+
+  def gh_description
+    infos['repository']['description']
   end
 
   def infos
